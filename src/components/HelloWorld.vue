@@ -1,8 +1,9 @@
 <template>
   <div class="allContainer">
 <el-container>
-  <el-aside width="200px">
-    <el-menu :default-openeds="['1', '3']">
+  <el-aside :style="{width: asideBigWidth?'200px':'50px'}">
+    <!-- <el-menu :default-openeds="['1', '3']"> -->
+    <el-menu>
       <el-submenu index="1">
         <template slot="title"><i class="el-icon-message"></i>导航一</template>
         <el-menu-item-group>
@@ -52,16 +53,20 @@
   </el-aside>
 
   <el-container>
-    <el-header style="text-align: right; font-size: 12px">
-      <el-dropdown>
-        <i class="el-icon-setting" style="margin-right: 15px"></i>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>查看</el-dropdown-item>
-          <el-dropdown-item>新增</el-dropdown-item>
-          <el-dropdown-item>删除</el-dropdown-item>
-        </el-dropdown-menu>
-      </el-dropdown>
-      <span>王小虎</span>
+    <el-header style="font-size: 12px; overflow: hidden;">
+      <div style="float: left;">
+        <span @click="handleSide"><i class="el-icon-menu" style="cursor: pointer;"></i> Dashboard</span>
+      </div>
+      <div style="float: right;">
+        <el-dropdown>
+          <i class="el-icon-setting" style="margin-right: 15px"></i>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>Github</el-dropdown-item>
+            <el-dropdown-item>Log Out</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+        <span>王小虎</span>
+      </div>
     </el-header>
 
     <el-main>
@@ -88,7 +93,14 @@ export default {
         address: '上海市普陀区金沙江路 1518 弄'
       };
       return {
-        tableData: Array(20).fill(item)
+        tableData: Array(20).fill(item),
+        asideBigWidth: true
+      }
+    },
+    methods: {
+      handleSide() {
+        console.log('asideBigWidth', this.asideBigWidth)
+        this.asideBigWidth = !this.asideBigWidth
       }
     }
 }
@@ -96,6 +108,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .allContainer {
+      border: 1px solid  #B3C0D1;
+  }
   .el-header {
     background-color: #B3C0D1;
     color: #333;
@@ -104,6 +119,7 @@ export default {
 
   .el-aside {
     color: #333;
+    border: 1px solid  #B3C0D1;
     /* background-color: #314155; */
   }
 </style>
