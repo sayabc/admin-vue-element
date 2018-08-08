@@ -4,7 +4,7 @@
       <el-aside :style="{width: asideBigWidth?'200px':'50px'}">
         <!-- <el-menu :default-openeds="['1', '3']"> -->
         <el-menu>
-          <el-submenu v-for="(item, index) in menuList" :key="index" :index="(index+1).toString()" style="text-align: left;">
+          <el-submenu @click="handleComponent" v-for="(item, index) in menuList" :key="index" :index="(index+1).toString()" style="text-align: left;">
             <template slot="title"><i :class="'el-icon-'+item.iconClass"></i>{{item.title}}</template>
             <el-menu-item-group v-if="item.hasChildren">
               <el-menu-item v-for="(it,ind) in item.children" :key="it.name+ind" :index="index+'-'+ind">{{it.name}}</el-menu-item>
@@ -57,21 +57,12 @@
           </div>
         </el-header>
 
-        <!-- <el-main style="width: 100%;">
-          <el-table :data="tableData" style="text-align: left;" stripe border>
-            <el-table-column prop="date" label="日期" width="160">
-            </el-table-column>
-            <el-table-column prop="name" label="姓名" width="160">
-            </el-table-column>
-            <el-table-column prop="address" label="地址">
-            </el-table-column>
-          </el-table>
-        </el-main> -->
         <!-- main主体部分 -->
 
-        <Controller
-          :curCompoent='curCompoent'
-        />
+        <!-- <Controller
+          :curComponent='curComponent'  改为store存储
+        /> -->
+        <Controller />
 
       </el-container>
     </el-container>
@@ -118,7 +109,7 @@ export default {
     return {
       asideBigWidth: true,
       menuList,
-      curCompoent: 'AddressList', // 当前组件
+      curComponent: 'AddressList', // 当前组件
     };
   },
   components: {
@@ -127,10 +118,13 @@ export default {
   methods: {
     handleSide() {
       this.asideBigWidth = !this.asideBigWidth;
+    },
+    handleComponent() {
+      console.log('this')
+      // this.$store.commit('HANDLE_CUR_COMPONENT', 'Test') // 同步更改组件
     }
   },
   mounted() {
-    console.log('echa', echarts)
   }
 };
 </script>

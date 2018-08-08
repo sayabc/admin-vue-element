@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   data() {
     const item = {
@@ -22,8 +24,17 @@ export default {
     return {
       tableData: Array(20).fill(item),
     }
+  },
+  computed: {
+    ...mapState({
+      infos: state => state.infos
+    })
+  },
+  mounted() {
+    console.log('info.age: ', this.infos.age)
   }
-}
+};
+
 </script>
 
 <style scoped>

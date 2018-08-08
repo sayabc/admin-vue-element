@@ -1,12 +1,17 @@
 <template>
-  <AddressList v-if="curCompoent === 'AddressList'" />
+  <div class="component_contaiiner">
+    <AddressList v-if="curComponent === 'AddressList'" />
+    <Test v-if="curComponent === 'Test'"/>
+  </div>
 </template>
 
 <script>
-import AddressList from './AddressList'
+import { mapState } from 'vuex';
+import AddressList from './AddressList';
+import Test from './Test'
 
 export default {
-  props: ['curCompoent'],
+  // props: ['curComponent'],
   data() {
     return {
 
@@ -14,9 +19,15 @@ export default {
   },
   components: {
     AddressList,
+    Test,
   },
   mounted() {
 
+  },
+  computed: {
+    ...mapState({
+      curComponent: state => state.curComponent
+    })
   }
 }
 </script>
