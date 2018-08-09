@@ -5,7 +5,7 @@
         <!-- <el-menu :default-openeds="['1', '3']"> -->
         <el-menu>
           <el-submenu v-for="(item, index) in menuList" :key="index" :index="(index+1).toString()" style="text-align: left;"
-              @click="handleComponent">
+              @click.native="handleComponent(item)">
             <template slot="title"><i :class="'el-icon-'+item.iconClass"></i>{{item.title}}</template>
             <el-menu-item-group v-if="item.hasChildren">
               <el-menu-item v-for="(it,ind) in item.children" :key="it.name+ind" :index="index+'-'+ind">{{it.name}}</el-menu-item>
@@ -51,7 +51,7 @@
               <i class="el-icon-setting" style="margin-right: 15px"></i>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item> <a href="https://github.com/sayabc/vue-admin" target="_blank">Github</a></el-dropdown-item>
-                <el-dropdown-item>Log Out</el-dropdown-item>
+                <el-dropdown-item @click.native="handleLogOut">Log Out</el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
             <span>eyea</span>
@@ -120,12 +120,14 @@ export default {
     handleSide() {
       this.asideBigWidth = !this.asideBigWidth;
     },
-    handleComponent() {
-      console.log('this')
-      // this.$store.commit('HANDLE_CUR_COMPONENT', 'Test') // 同步更改组件
+    handleComponent(item) {
+      this.$store.commit('HANDLE_CUR_COMPONENT', item.title) // 同步更改组件
     },
     handleUrl(url) {
       window.open(url)
+    },
+    handleLogOut() {
+      window.confirm('确认退出？')
     }
   },
   mounted() {
