@@ -7,8 +7,9 @@
         background-color="#304156"
         text-color="#bfcbd9"
         active-text-color="#409EFF"
+        :collapse="isCollapse"
       >
-        <!--  :default-active="$route.path"   :collapse="isCollapse"    -->
+        <!--  :default-active="$route.path"      -->
         <sidebar-items />
       </el-menu>
     </el-scrollbar>
@@ -16,12 +17,20 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import SidebarItems from "./SidebarItems";
 
 export default {
   components: {
-    SidebarItems
+    SidebarItems,
+  },
+  computed: {
+    ...mapGetters([
+      'sidebar'
+    ]),
+    isCollapse() {
+      return !this.sidebar.open;
+    },
   }
 };
 </script>
-

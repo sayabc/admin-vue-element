@@ -1,4 +1,4 @@
-.sidebar-container {
+.sidebar_container {
   transition: width 0.28s;
   width: 180px !important;
   height: 100%;
@@ -15,5 +15,14 @@
     .el-scrollbar__view {
       height: 100%;
     }
+  }
+}
+
+.root_hide_slidebar {
+  .sidebar_container {
+    width: 36px !important;
+  }
+  .main_container {
+    margin-left: 36px;
   }
 }

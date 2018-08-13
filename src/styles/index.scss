@@ -19,11 +19,13 @@ html {
 
 #app{
   height: 100%;
-  .main-container {
-    min-height: 100%;
-    transition: margin-left .28s;
-    margin-left: 180px;
-    position: relative;
+  .root_contailer {
+    .main_container {
+      min-height: 100%;
+      transition: margin-left .28s;
+      margin-left: 180px;
+      position: relative;
+    }
   }
 }
 
@@ -119,7 +121,7 @@ code {
   }
 }
 
-//main-container全局样式
+//main_container全局样式
 .app-container {
   padding: 20px;
 }

@@ -15,16 +15,7 @@
 <script>
 export default {
   name: 'hamburger',
-  props: {
-    isActive: {
-      type: Boolean,
-      default: false
-    },
-    toggleClick: {
-      type: Function,
-      default: null
-    }
-  }
+  props: ['isActive', 'toggleClick'],
 }
 </script>
 

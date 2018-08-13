@@ -1,7 +1,7 @@
 <template>
-  <div class="root-contailer">
-    <sidebar class="sidebar-container" />
-    <div class="main-container">
+  <div :class="['root_contailer', rootEleClass]">
+    <sidebar class="sidebar_container" />
+    <div class="main_container">
       <navbar />
       <main-part />
     </div>
@@ -9,14 +9,25 @@
 </template>
 
 <script>
-import { Navbar, Sidebar, MainPart } from './components'
+import { mapGetters } from 'vuex';
+import { Navbar, Sidebar, MainPart } from './components';
 
 export default {
   name: 'layout',
   components: {
     Sidebar,
     Navbar,
-    MainPart
+    MainPart,
+  },
+  computed: {
+    ...mapGetters([
+      'sidebar',
+    ]),
+    rootEleClass() {
+      return {
+        root_hide_slidebar: !this.sidebar.open,
+      }
+    }
   }
 }
 </script>
