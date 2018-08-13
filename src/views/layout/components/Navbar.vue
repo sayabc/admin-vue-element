@@ -1,21 +1,23 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
-    <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
+    <!-- <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger> -->
+    <hamburger class="hamburger-container pointer" :toggleClick="toggleSideBar" :isActive="true"></hamburger>
 
-    <breadcrumb class="breadcrumb-container"></breadcrumb>
+    <!-- <breadcrumb class="breadcrumb-container"></breadcrumb> -->
   </el-menu>
 </template>
 
 <script>
+import Hamburger from '@/components/Hamburger'
 
 export default {
   components: {
     Hamburger,
-    Breadcrumb
+    // Breadcrumb
   },
   methods: {
     toggleSideBar() {
-      // 点击放大
+      // 点击收放左侧 SideBar
     }
   }
 }

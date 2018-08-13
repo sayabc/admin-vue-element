@@ -1,7 +1,7 @@
 <template>
   <div class="root-contailer">
     <sidebar class="sidebar-container" />
-    <div class="main-part">
+    <div class="main-container">
       <navbar />
       <main-part />
     </div>

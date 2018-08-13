@@ -1,6 +1,6 @@
 <template>
   <div class="main-con">
-    {{ m }} 00000fdfa
+    {{ m }}
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      m: 'main'
+      m: 'main part'
     }
   }
 }
