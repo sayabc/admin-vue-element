@@ -1,16 +1,12 @@
 <template>
-  <div class="sidebar-item">
-    {{ item }}
+  <div class="sidebar_item">
+
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      item: 'sidebar-item'
-    }
-  }
+  props: ['item'],
 }
 </script>
 

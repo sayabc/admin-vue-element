@@ -1,9 +1,12 @@
-// 单一功能模块
+// global功能模块
+import { routersMap } from '@/router';
+
 const global = {
   state: {
     sidebar: {
       open: true, // 默认展开sidebar
     },
+    permissionRouters: routersMap,
   },
   mutations: {
     TOGGLE_SIDEBAR: (state) => {

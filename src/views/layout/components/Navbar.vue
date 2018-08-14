@@ -1,20 +1,19 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
-    <!-- <hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger> -->
-    <hamburger class="hamburger-container pointer" :toggleClick="toggleSideBar" :isActive="sidebar.open"></hamburger>
-
-    <!-- <breadcrumb class="breadcrumb-container"></breadcrumb> -->
+    <hamburger class="hamburger_container pointer" :toggleClick="toggleSideBar" :isActive="sidebar.open"></hamburger>
+    <breadcrumb class="breadcrumb_container fl"></breadcrumb>
   </el-menu>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import Hamburger from '@/components/Hamburger';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default {
   components: {
     Hamburger,
-    // Breadcrumb
+    Breadcrumb,
   },
   computed: {
     ...mapGetters([
@@ -35,14 +34,17 @@ export default {
   height: 50px;
   line-height: 50px;
   border-radius: 0px !important;
-  .hamburger-container {
+  .hamburger_container {
     line-height: 58px;
     height: 50px;
     float: left;
     padding: 0 10px;
+    font-size: 16px;
   }
-  .breadcrumb-container{
-    float: left;
+  .breadcrumb_container {
+    line-height: 50px;
+    font-size: 16px;
+    margin-left: 14px;
   }
   .errLog-container {
     display: inline-block;
