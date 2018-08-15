@@ -17,6 +17,19 @@ export const routersMap = [ // export stroe需要用到映射关系
       component: () => import('@/views/dashboard/index'),
       name: 'dashboard',
     }],
+  }, {
+    path: '/test',
+    component: Layout,
+    redirect: 'test/index',
+    children: [{
+      path: 'test/test1',
+      component: () => import('@/views/test/test1'),
+      name: 'test1',
+    }, {
+      path: 'test/test2',
+      component: () => import('@/views/test/test2'),
+      name: 'test2',
+    }],
   },
 ];
 

@@ -2,7 +2,10 @@
   <div class="sidebar_item" v-if="item.children">
     <!-- 如果该条item没有子元素 -->
     <router-link v-if="hasOneChild(item.children)" :to="item.children[0].path">
-      {{ item.children[0].name }}
+      <el-menu-item :index="item.children[0].path">
+        <!-- <svg-icon :icon-class="dashboard"></svg-icon> -->
+        <span>{{ item.children[0].name }}</span>
+      </el-menu-item>
     </router-link>
     <!-- 该条 item 有二级菜单 -->
   </div>
@@ -18,5 +21,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+
+</style>
+
 
 
