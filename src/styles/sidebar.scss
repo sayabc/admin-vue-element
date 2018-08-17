@@ -9,6 +9,7 @@
   left: 0;
   z-index: 1001;
   overflow: hidden;
+  background-color: rgb(48, 65, 86);
   .scrollbar-wrapper {
     font-size: 12px;
     overflow-x: hidden!important;
@@ -27,6 +28,9 @@
       .el-tooltip {
         padding: 0 4px !important;
       }
+    }
+    .el-tooltip {
+      padding: 0 4px !important;
     }
   }
   .main_container {
