@@ -7,13 +7,21 @@
         <span slot="title">{{ children[0].name }}</span>
       </el-menu-item>
     </router-link>
+
     <!-- 该条 item 有二级菜单 -->
-    <router-link v-else v-for="(mulItem,index) in children" :key="index" :to="mulItem.path">
-      <el-menu-item :index="mulItem.path||mulItem.meta.title">
-        <i :class="'el-icon-'+mulItem.meta.icon"></i>
-        <span slot="title">{{ mulItem.name }}</span>
-      </el-menu-item>
-    </router-link>
+    <el-submenu :index="'String'" v-else>
+        <template slot="title">
+          <i class="el-icon-location"></i>
+          <span>Test</span>
+        </template>
+          <el-menu-item  v-for="(mulItem,index) in children" :key="index" :index="mulItem.path||mulItem.meta.title">
+            <router-link  :to="mulItem.path">
+              <i :class="'el-icon-'+mulItem.meta.icon"></i>
+              <span>{{ mulItem.name }}</span>
+            </router-link>
+          </el-menu-item>
+    </el-submenu>
+
 
 
   </div>
@@ -21,29 +29,27 @@
 
 <script>
 export default {
-  props: ['item', 'collapse'],
+  props: ["item", "collapse"],
   data() {
     return {
-       isCollapse: true,
-       children: null
-    }
+      isCollapse: true,
+      children: null
+    };
   },
   methods: {
     hasOnlyOneChild(ic) {
-      this.children = ic
+      this.children = ic;
       if (ic.length === 1) {
-        return true
+        return true;
       } else {
-        return false
+        return false;
       }
-    },
-
+    }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
 
 

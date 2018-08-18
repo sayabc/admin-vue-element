@@ -25,15 +25,19 @@
     .submenu_title_noDropdown {
       padding-left: 10px !important;
       position: relative;
-      .el-tooltip {
-        padding: 0 4px !important;
-      }
+      // .el-tooltip {
+      //   padding: 0 4px !important;
+      // }
     }
     .el-tooltip {
       padding: 0 4px !important;
     }
+
   }
   .main_container {
     margin-left: 36px !important;
+  }
+  .el-submenu__title {
+    padding: 0 4px !important;
   }
 }
