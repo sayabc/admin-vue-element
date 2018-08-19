@@ -12,4 +12,11 @@ export default {
 }
 </script>
 
-
+<style lang="scss" scoped>
+  .test_container {
+    margin: 50px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid red;
+  }
+</style>
