@@ -1,7 +1,8 @@
 <template>
   <el-menu class="navbar" mode="horizontal">
     <hamburger class="hamburger_container pointer" :toggleClick="toggleSideBar" :isActive="sidebar.open"></hamburger>
-    <breadcrumb class="breadcrumb_container fl"></breadcrumb>
+    <NavList />
+    <breadcrumb class="breadcrumb_container"></breadcrumb>
   </el-menu>
 </template>
 
@@ -9,11 +10,13 @@
 import { mapGetters } from 'vuex';
 import Hamburger from '@/components/Hamburger';
 import Breadcrumb from '@/components/Breadcrumb';
+import NavList from '@/components/NavList';
 
 export default {
   components: {
     Hamburger,
     Breadcrumb,
+    NavList,
   },
   computed: {
     ...mapGetters([

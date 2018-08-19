@@ -11,18 +11,16 @@
     <!-- 该条 item 有二级菜单 -->
     <el-submenu :index="'String'" v-else>
         <template slot="title">
-          <i class="el-icon-location"></i>
-          <span>Test</span>
+          <i class="el-icon-document"></i>
+          <span>document</span>
         </template>
-          <el-menu-item  v-for="(mulItem,index) in children" :key="index" :index="mulItem.path||mulItem.meta.title">
-            <router-link  :to="mulItem.path">
+          <el-menu-item v-for="(mulItem,index) in children" :key="index" :index="mulItem.path||mulItem.meta.title">
+            <router-link :to="mulItem.path">
               <i :class="'el-icon-'+mulItem.meta.icon"></i>
               <span>{{ mulItem.name }}</span>
             </router-link>
           </el-menu-item>
     </el-submenu>
-
-
 
   </div>
 </template>
@@ -50,7 +48,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 </style>
-
-
-
