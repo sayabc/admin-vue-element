@@ -12,6 +12,9 @@ export const routersMap = [ // export stroe需要用到映射关系
     path: '/',
     component: Layout,
     redirect: 'dashboard',
+    meta: {
+      keepAlive: true, // 组件需要被缓存
+    },
     children: [{
       path: 'dashboard',
       component: () => import('@/views/dashboard/index'),
@@ -22,16 +25,19 @@ export const routersMap = [ // export stroe需要用到映射关系
     path: '/test',
     component: Layout,
     redirect: 'test/index',
+    meta: {
+      keepAlive: true,
+    },
     children: [{
-      path: 'test/test1',
+      path: '/test1',
       component: () => import('@/views/test/test1'),
       name: 'test1',
-      meta: { title: 'dashboard', icon: 'menu' },
+      meta: { title: 'test1', icon: 'menu' },
     }, {
-      path: 'test/test2',
+      path: '/test2',
       component: () => import('@/views/test/test2'),
       name: 'test2',
-      meta: { title: 'dashboard', icon: 'setting' },
+      meta: { title: 'test2', icon: 'setting' },
     }],
   },
 ];

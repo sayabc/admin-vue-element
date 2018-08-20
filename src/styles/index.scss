@@ -186,3 +186,17 @@ code {
 .multiselect--active {
   z-index: 1000 !important;
 }
+
+// 重置element-ui部分样式  tabs
+.el-tabs {
+  .el-tabs__header {
+    overflow: hidden;
+    margin-bottom: 0px;
+  }
+}
+.el-tabs__nav-wrap::after {
+  height: 0 !important;
+}
+.el-tabs__item {
+  padding: 0 14px !important;
+}
