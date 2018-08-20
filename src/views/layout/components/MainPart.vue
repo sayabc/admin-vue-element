@@ -25,6 +25,7 @@
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -38,7 +39,7 @@ export default {
     // key() {
     //   return this.$route.fullPath;
     // }
-  }
+  },
 }
 </script>
 

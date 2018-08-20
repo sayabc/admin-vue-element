@@ -2,55 +2,34 @@
   <div class="nav_container">
     <el-tabs @tab-click="handleClick">
       <el-tab-pane
-        v-for="(item, index) in navList"
+        v-for="(item, index) in routersMap"
         :key="index"
-        :label="item.title"
-        :name="item.title" />
-    </el-tabs>
+        :label="item.meta.title"
+        :name="item.meta.title" />
+      </el-tabs>
   </div>
 </template>
 
 <script>
+import { routersMap } from '@/router/index';
+
 export default {
   data() {
     return {
-      navList: [{
-        title: 'Document',
-        linkTo: 'baidu',
-      }, {
-        title: 'Workspace',
-        linkTo: 'sina',
-      }],
-      activeName: 'second'
-    }
-  },
-  watch: {
-    $route() {
-      this.resetNavList()
+      routersMap: routersMap,
     }
   },
   methods: {
-    resetNavList() {
-      let list = this.$route.matched.filter(item => item.name)
-
-    },
-    handleClick() {
-
+    handleClick(tab, event) { // 点击通知 getters 去处理 sidebar的显示元素列表
+      this.$store.dispatch('handleSidebarList', tab.name)
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .nav_container {
   margin-left: 40px;
-  .el-tabs {
-    .el-tabs__header {
-      overflow: hidden;
-      margin-bottom: 0px !important;
-      border: 1px solid red;
-    }
-  }
 }
 </style>
 

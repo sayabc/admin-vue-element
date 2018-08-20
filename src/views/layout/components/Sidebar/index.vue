@@ -10,7 +10,7 @@
         :collapse="isCollapse"
       >
         <!--  :default-active="$route.path"      -->
-        <sidebar-items v-for="(item) in permissionRouters" :key="item.name" :item='item'/>
+        <sidebar-items v-for="item in showList" :key="item.meta.title" :item='item'/>
       </el-menu>
     </el-scrollbar>
   </div>
@@ -27,11 +27,14 @@ export default {
   computed: {
     ...mapGetters([
       'sidebar',
-      'permissionRouters'
+      'permissionRouters',
     ]),
     isCollapse() {
       return !this.sidebar.open;
     },
+    showList() {
+      return [this.sidebar.showList];
+    }
   },
 };
 </script>
