@@ -27,7 +27,6 @@ export default {
   computed: {
     ...mapGetters([
       'sidebar',
-      'permissionRouters',
     ]),
     isCollapse() {
       return !this.sidebar.open;
