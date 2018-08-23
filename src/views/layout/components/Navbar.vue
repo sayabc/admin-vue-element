@@ -2,20 +2,20 @@
   <el-menu class="navbar" mode="horizontal">
     <hamburger class="hamburger_container pointer" :toggleClick="toggleSideBar" :isActive="sidebar.open"></hamburger>
     <NavList />
-    <breadcrumb class="breadcrumb_container"></breadcrumb>
+    <!-- <breadcrumb class="breadcrumb_container"></breadcrumb> -->
   </el-menu>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
 import Hamburger from '@/components/Hamburger';
-import Breadcrumb from '@/components/Breadcrumb';
+// import Breadcrumb from '@/components/Breadcrumb';
 import NavList from '@/components/NavList';
 
 export default {
   components: {
     Hamburger,
-    Breadcrumb,
+    // Breadcrumb,
     NavList,
   },
   computed: {
