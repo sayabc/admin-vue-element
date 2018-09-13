@@ -11,27 +11,6 @@
               <el-menu-item v-for="(it,ind) in item.children" :key="it.name+ind" :index="index+'-'+ind">{{it.name}}</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
-          <!-- <el-submenu index="1">
-            <template slot="title"><i class="el-icon-message"></i>Dashboard</template>
-            <el-menu-item-group>
-              <el-menu-item index="1-1">Dashboard1</el-menu-item>
-              <el-menu-item index="1-2">Dashboard2</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-submenu index="2">
-            <template slot="title"><i class="el-icon-menu"></i>Charts</template>
-            <el-menu-item-group>
-              <el-menu-item index="2-1">Charts1</el-menu-item>
-              <el-menu-item index="2-2">Charts2</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu>
-          <el-submenu index="3">
-            <template slot="title"><i class="el-icon-setting"></i>Documents</template>
-            <el-menu-item-group>
-              <el-menu-item index="3-1">Documents1</el-menu-item>
-              <el-menu-item index="3-2">Documents2</el-menu-item>
-            </el-menu-item-group>
-          </el-submenu> -->
         </el-menu>
       </el-aside>
 
