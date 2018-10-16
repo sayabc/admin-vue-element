@@ -20,8 +20,9 @@ export default {
     }
   },
   methods: {
-    handleClick(tab, event) { // 点击通知 getters 去处理 sidebar的显示元素列表
+    handleClick(tab, event) { // 点击通知 getters 去处理 sidebar的显示元素列表  同时应该默认显示该项目下的首页或某一页
       this.$store.dispatch('handleSidebarList', tab.name)
+      this.$store.dispatch('handleSidebarListShowFirstChild') // 似乎可以去掉
     }
   },
 }

@@ -9,7 +9,7 @@ import test from './test';
 
 Vue.use(Router);
 
-export const defaultSideBar = dashboard;
+export const defaultSideBar = test;
 
 export const routersMap = [
   dashboard,
