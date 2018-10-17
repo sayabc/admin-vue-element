@@ -10,7 +10,8 @@
         :collapse="isCollapse"
       >
         <!--  :default-active="$route.path"      -->
-        <sidebar-items v-for="item in showList" :key="item.meta.title" :item='item'/>
+        <!-- <sidebar-items v-for="item in showList" :key="item.meta.title" :item='item'/> -->
+        <sidebar-items v-for="item in routersMap" :key="item.meta.title" :item='item'/>
       </el-menu>
     </el-scrollbar>
   </div>
@@ -19,8 +20,15 @@
 <script>
 import { mapGetters } from 'vuex'
 import SidebarItems from "./SidebarItems";
+import { routersMap } from "@/router/index";
+
 
 export default {
+  data() {
+    return {
+      routersMap: routersMap
+    }
+  },
   components: {
     SidebarItems,
   },
@@ -32,7 +40,10 @@ export default {
       return !this.sidebar.open;
     },
     showList() {
-      return [this.sidebar.showList];
+      // 更新下路由 和 sidebar list
+      let curShowList = [this.sidebar.showList]
+      this.$router.push(curShowList[0].children[0].path)
+      return curShowList;
     }
   },
 };

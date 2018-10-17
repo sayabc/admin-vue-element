@@ -12,7 +12,7 @@
     <el-submenu :index="'String'" v-else>
       <template slot="title">
         <i class="el-icon-document"></i>
-        <span>document</span>
+        <span @click="handleMulItemFir(children)">{{ item.meta.title }}</span>
       </template>
       <el-menu-item v-for="(mulItem,index) in children" :key="index" :index="mulItem.path||mulItem.meta.title">
         <router-link :to="mulItem.path">
@@ -37,16 +37,11 @@ export default {
   methods: {
     hasOnlyOneChild(ic) {
       this.children = ic;
-      if (ic.length === 1) {
-        return true;
-      } else {
-        return false;
-      }
-    }
+      return ic.length === 1 ? true : false
+    },
+    handleMulItemFir(c) {
+      this.$router.push(c[0].path)
+    },
   }
 };
 </script>
-
-<style lang="scss" scoped>
-
-</style>
