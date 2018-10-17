@@ -37,11 +37,7 @@ export default {
   methods: {
     hasOnlyOneChild(ic) {
       this.children = ic;
-      if (ic.length === 1) {
-        return true;
-      } else {
-        return false;
-      }
+      return ic.length === 1 ? true : false
     }
   }
 };

@@ -2,7 +2,7 @@
 <div>
   <el-breadcrumb separator="/">
     <el-breadcrumb-item v-for="(item, ind) in breadCrumbList.children" :key="ind" :to="{ path: item.path}" >
-      {{ item.meta.title }}
+      {{ item.meta.title + 'sayhe'}}
     </el-breadcrumb-item>
   </el-breadcrumb>
 </div>
@@ -33,6 +33,7 @@ export default {
       'sidebar'
     ]),
     breadCrumbList() {
+      console.log('watch sidebar', this.sidebar.showList[0])
       return [this.sidebar.showList][0]
     }
   }

@@ -17,6 +17,7 @@
         <router-view :key="key"></router-view>
       </keep-alive> -->
       <keep-alive>
+        <!-- <router-view  :key="key"></router-view> -->
         <router-view></router-view>
       </keep-alive>
 
@@ -25,6 +26,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 
 export default {
   data() {
@@ -36,9 +38,13 @@ export default {
 
   },
   computed: {
-    // key() {
-    //   return this.$route.fullPath;
-    // }
+    ...mapGetters([
+      'sidebar'
+    ]),
+    key() {
+      console.log('sidebar: ', this.sidebar)
+      // return this.sidebar.showList[0].children[0].path;
+    }
   },
 }
 </script>

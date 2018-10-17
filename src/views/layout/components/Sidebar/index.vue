@@ -32,7 +32,10 @@ export default {
       return !this.sidebar.open;
     },
     showList() {
-      return [this.sidebar.showList];
+      // 更新下路由 和 sidebar list
+      let curShowList = [this.sidebar.showList]
+      this.$router.push(curShowList[0].children[0].path)
+      return curShowList;
     }
   },
 };

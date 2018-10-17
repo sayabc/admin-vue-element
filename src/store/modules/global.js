@@ -15,7 +15,7 @@ const global = {
     },
     HANDLE_SIDEBAR_LIST: (state, data) => {
       const arr = state.permissionRouters.find(item => item.meta.title === data);
-      state.sidebar.showList = arr;
+      state.sidebar.showList = [arr][0];
     },
   },
   actions: {
