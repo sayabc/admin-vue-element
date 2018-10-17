@@ -1,6 +1,6 @@
 <template>
   <div class="nav_container">
-    <div class="nav_left">
+    <!-- <div class="nav_left">
       <el-tabs @tab-click="handleClick">
         <el-tab-pane
           v-for="(item, index) in routersMap"
@@ -9,8 +9,8 @@
           :name="item.meta.title"
         />
       </el-tabs>
-    </div>
-    <div class="shortcut_entrance">
+    </div> -->
+    <div class="shortcut_entrance fr">
       <el-dropdown class="fr">
         <span class="el-dropdown-link">
           个人中心<i class="el-icon-arrow-down el-icon--right"></i>
@@ -31,19 +31,19 @@
 </template>
 
 <script>
-import { routersMap } from "@/router/index";
+// import { routersMap } from "@/router/index";
 
 export default {
   data() {
     return {
-      routersMap: routersMap
+      // routersMap: routersMap
     };
   },
   methods: {
-    handleClick(tab, event) {
-      // 点击通知 getters 去处理 sidebar的显示元素列表  同时应该默认显示该项目下的首页或某一页
-      this.$store.dispatch("handleSidebarList", tab.name);
-    }
+    // handleClick(tab, event) {
+    //   // 点击通知 getters 去处理 sidebar的显示元素列表  同时应该默认显示该项目下的首页或某一页
+    //   this.$store.dispatch("handleSidebarList", tab.name);
+    // }
   }
 };
 </script>
@@ -62,7 +62,6 @@ export default {
   width: 60%;
 }
 .shortcut_entrance {
-  float: left;
   width: 40%;
 }
 
