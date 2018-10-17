@@ -15,17 +15,7 @@ const global = {
     },
     HANDLE_SIDEBAR_LIST: (state, data) => {
       const arr = state.permissionRouters.find(item => item.meta.title === data);
-      // const arr = state.permissionRouters.find(item => {
-      //   if(item.meta.title === data) {
-      //     console.log(data, item.meta.title, item.meta.title === data)
-      //     return item.meta.title === data
-      //   }
-      // });
       state.sidebar.showList = [arr][0];
-      console.log('arr', [arr][0]);
-    },
-    HANDLE_SIDEBAR_LIST_SHOW_FIRST_CHILD: () => {
-      // state.sidebar.showList = arr;
     },
   },
   actions: {
@@ -34,9 +24,6 @@ const global = {
     },
     handleSidebarList: ({ commit }, data) => {
       commit('HANDLE_SIDEBAR_LIST', data);
-    },
-    handleSidebarListShowFirstChild: ({ commit }) => {
-      commit('HANDLE_SIDEBAR_LIST_SHOW_FIRST_CHILD');
     },
   },
 
