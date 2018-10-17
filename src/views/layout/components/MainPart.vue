@@ -53,5 +53,8 @@ export default {
 .main_part {
   overflow: hidden;
   padding: 20px;
+  /* 全屏时候 */
+  background-color: #fff;
+  height: 100vh;
 }
 </style>
