@@ -20,8 +20,8 @@
           <el-dropdown-item>退出登录</el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <div class="fr el-dropdown">
-        全屏
+      <div class="fr el-dropdown" @click="handleFullScreen">
+        {{ isFullScreen ? '退出全屏/ESC' : '全屏'}}
       </div>
       <div class="fr el-dropdown">
         多语言切换
@@ -37,6 +37,7 @@ export default {
   data() {
     return {
       // routersMap: routersMap
+      isFullScreen: false
     };
   },
   methods: {
@@ -44,6 +45,38 @@ export default {
     //   // 点击通知 getters 去处理 sidebar的显示元素列表  同时应该默认显示该项目下的首页或某一页
     //   this.$store.dispatch("handleSidebarList", tab.name);
     // }
+    exitFullScreen: function() {
+
+    },
+    enterFullScreen: function() {
+
+    },
+    handleFullScreen: function() {
+      let ele = document.getElementById('app')
+      this.isFullScreen = !this.isFullScreen
+
+      let enterFullScreen   = ele.requestFullScreen
+                        || ele.webkitRequestFullScreen //谷歌
+                        || ele.mozRequestFullScreen  //火狐
+                        || ele.msRequestFullScreen; //IE11
+
+      let exitFullScreen = document.exitFullscreen || //W3C
+                       document.mozCancelFullScreen || //Chrome等
+                       document.webkitExitFullscreen || //FireFox
+                       document.webkitExitFullscreen; //IE11
+
+      let requestMethod = this.isFullScreen ? enterFullScreen : exitFullScreen
+      let callEle = this.isFullScreen ? ele : document
+
+      if (requestMethod) {
+        requestMethod.call(callEle)
+      } else if (typeof window.ActiveXObject !== "undefined") {
+        let wscript = new ActiveXObject("WScript.Shell");
+        if (wscript) {
+          wscript.SendKeys("{F11}");
+        }
+      }
+    }
   }
 };
 </script>
