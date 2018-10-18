@@ -16,8 +16,14 @@
           个人中心<i class="el-icon-arrow-down el-icon--right"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>项目地址</el-dropdown-item>
-          <el-dropdown-item>退出登录</el-dropdown-item>
+          <el-dropdown-item>
+            <a href="https://github.com/sayabc/admin-vue-element" target="_blank">项目地址</a>
+          </el-dropdown-item>
+          <el-dropdown-item>
+            <p @click="handleExit">
+              退出登录
+            </p>
+          </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
       <div class="fr el-dropdown" @click="handleFullScreen">
@@ -76,6 +82,9 @@ export default {
           wscript.SendKeys("{F11}");
         }
       }
+    },
+    handleExit: function() {
+      alert('清空登录信息，返回登录页')
     }
   }
 };
