@@ -45,3 +45,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss"> // scoped delete for cancling click menu icon
+.el-menu {
+  border-right: none !important;
+}
+</style>
