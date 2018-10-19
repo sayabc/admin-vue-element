@@ -2,16 +2,16 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 // 各个模块分配
-import dashboard from './dashboard';
-import test from './test';
+import dashBoard from './dashBoard';
+import errPage from './errPage';
 
 Vue.use(Router);
 
-export const defaultSideBar = dashboard;
+export const defaultSideBar = dashBoard;
 
 export const routersMap = [
-  dashboard,
-  test,
+  dashBoard,
+  errPage,
 ];
 
 export default new Router({

@@ -5,7 +5,7 @@ const global = {
   state: {
     sidebar: {
       open: true, // 默认展开sidebar
-      showList: defaultSideBar, // defalut is dashboard
+      showList: defaultSideBar, // defalut is dashBoard
     },
     permissionRouters: routersMap, // 需要做下处理: 去重 title 路由等
   },
