@@ -1,19 +1,19 @@
 import Layout from '@/views/layout/Layout';
 
-const dashboard = {
+const dashBoard = {
   path: '/',
   component: Layout,
-  redirect: 'dashboard',
+  redirect: 'dashBoard',
   meta: {
     keepAlive: true, // 组件需要被缓存
-    title: 'dashboard', // 用来在 navList显示
+    title: 'dashBoard', // 用来在 navList显示
   },
   children: [{
-    path: 'dashboard',
-    component: () => import('@/views/dashboard/index'),
-    name: 'dashboard',
-    meta: { title: 'dashboard', icon: 'location' },
+    path: 'dashBoard',
+    component: () => import('@/views/dashBoard/index'),
+    name: 'dashBoard',
+    meta: { title: 'dashBoard', icon: 'location' },
   }],
 };
 
-export default dashboard;
+export default dashBoard;

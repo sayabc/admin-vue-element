@@ -1,5 +1,5 @@
 <template>
   <div class="test2">
-    this is test22 page
+    这里是 50x 页面
   </div>
 </template>
