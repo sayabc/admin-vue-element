@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 // 各个模块分配
-import login from './login';
+import login from './welcome';
 import dashBoard from './dashBoard';
 import errPage from './errPage';
 

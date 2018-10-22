@@ -1,4 +1,4 @@
-import Login from '@/views/login/index';
+import Login from '@/views/welcome/index';
 
 const login = {
   path: '/',
@@ -10,7 +10,7 @@ const login = {
   },
   children: [{
     path: 'login',
-    component: () => import('@/views/login/index'),
+    component: () => import('@/views/welcome/index'),
     name: 'login',
     meta: { title: 'login', icon: 'location' },
   }],
