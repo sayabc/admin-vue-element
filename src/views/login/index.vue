@@ -1,5 +1,5 @@
 <template>
-  <div id="login">
+  <div id="login_container">
     <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm" size="mini">
       <el-form-item label="账号">
         <el-input v-model="ruleForm2.name"></el-input>
@@ -14,8 +14,9 @@
         <el-input v-model.number="ruleForm2.age"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
+        <el-button type="primary" @click="submitForm('ruleForm2')">注册并登录</el-button>
         <el-button @click="resetForm('ruleForm2')">重置</el-button>
+        <el-button @click="handleBackToList">返回列表页面</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -87,8 +88,8 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!');
-          location.href = '/dashboard'
+          alert('submit success!');
+          this.$router.push('/dashboard');
         } else {
           console.log('error submit!!');
           return false;
@@ -97,8 +98,24 @@ export default {
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
+    },
+    handleBackToList() {
+      this.$router.push('/dashboard')
     }
   }
 }
 </script>
 
+<style lang="scss" scoped>
+#login_container {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #2d3a5b;
+  .demo-ruleForm {
+    width: 666px;
+    margin: 0 auto;
+    padding-top: 200px;
+  }
+}
+</style>
