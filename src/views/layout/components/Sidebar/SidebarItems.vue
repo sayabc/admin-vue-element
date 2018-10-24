@@ -9,12 +9,12 @@
     </router-link>
 
     <!-- 该条 item 有二级菜单 -->
-    <el-submenu :index="'String'" v-else>
+    <el-submenu :index="item.meta.title" v-else> <!--注意这里的index如果写固定会导致左侧多个多级子菜单的一个bug-->
       <template slot="title">
         <i class="el-icon-document"></i>
         <span @click="handleMulItemFir(children)">{{ item.meta.title }}</span>
       </template>
-      <el-menu-item v-for="(mulItem,index) in children" :key="index" :index="mulItem.path||mulItem.meta.title">
+      <el-menu-item v-for="(mulItem,index) in children" :key="mulItem+index" :index="mulItem.path||mulItem.meta.title">
         <router-link :to="mulItem.path">
           <i :class="'el-icon-'+mulItem.meta.icon"></i>
           <span>{{ mulItem.name }}</span>
@@ -30,7 +30,6 @@ export default {
   props: ["item", "collapse"],
   data() {
     return {
-      isCollapse: true,
       children: null
     };
   },
