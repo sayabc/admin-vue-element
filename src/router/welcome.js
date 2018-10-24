@@ -9,7 +9,7 @@ const welcome = {
     title: 'welcome', // 用来在 navList显示
   },
   children: [{
-    path: 'welcome',
+    path: '/welcome',
     component: () => import('@/views/welcome/index'),
     name: 'welcome',
     meta: { title: 'welcome', icon: 'location' },

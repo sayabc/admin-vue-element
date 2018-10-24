@@ -3,7 +3,7 @@ import Layout from '@/views/layout/Layout';
 const test = {
   path: '/errPage',
   component: Layout,
-  redirect: 'errPage/index',
+  redirect: 'errPage',
   meta: {
     keepAlive: true,
     title: 'errPage', // 用来在 navList显示
