@@ -1,19 +1,19 @@
 import Login from '@/views/welcome/index';
 
-const login = {
+const welcome = {
   path: '/',
   component: Login,
-  redirect: 'login',
+  redirect: 'welcome',
   meta: {
     keepAlive: true, // 组件需要被缓存
-    title: 'login', // 用来在 navList显示
+    title: 'welcome', // 用来在 navList显示
   },
   children: [{
-    path: 'login',
+    path: 'welcome',
     component: () => import('@/views/welcome/index'),
-    name: 'login',
-    meta: { title: 'login', icon: 'location' },
+    name: 'welcome',
+    meta: { title: 'welcome', icon: 'location' },
   }],
 };
 
-export default login;
+export default welcome;

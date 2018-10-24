@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 // 各个模块分配
-import login from './welcome';
+import welcome from './welcome';
 import dashBoard from './dashBoard';
 import errPage from './errPage';
 
@@ -13,7 +13,7 @@ export const defaultSideBar = dashBoard;
 export const routersMap = [
   dashBoard,
   errPage,
-  login,
+  welcome,
 ];
 
 export default new Router({
