@@ -85,7 +85,7 @@ export default {
     },
     handleExit: function() {
       alert('清空登录信息，返回登录页')
-      this.$router.push('/login')
+      this.$router.push('/welcome')
     }
   }
 };

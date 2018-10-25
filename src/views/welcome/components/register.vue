@@ -17,6 +17,7 @@
         <el-button type="primary" @click="submitForm('ruleForm2')">注册并登录</el-button>
         <el-button @click="resetForm('ruleForm2')">重置</el-button>
         <el-button @click="handleBackToList">返回列表页面</el-button>
+        <el-button @click="handleChangeEnterStyleLogin">已有账号直接登录</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -101,6 +102,9 @@ export default {
     },
     handleBackToList() {
       this.$router.push('/dashboard')
+    },
+    handleChangeEnterStyleLogin() {
+      this.$store.dispatch('changeEnterSiteStyle', 'login_style')
     }
   }
 }
@@ -108,10 +112,6 @@ export default {
 
 <style lang="scss" scoped>
 #login_container {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  background-color: #2d3a5b;
   .demo-ruleForm {
     width: 666px;
     margin: 0 auto;
