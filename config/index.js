@@ -51,10 +51,9 @@ module.exports = {
     // Paths
     // assetsRoot: path.resolve(__dirname, '../dist'),
     assetsRoot: path.resolve(__dirname, '../docs'),
-    // assetsSubDirectory: 'static',
     assetsSubDirectory: 'static',
     // assetsPublicPath: '/',
-    assetsPublicPath: '/admin-vue-element/',
+    assetsPublicPath: '/admin-vue-element/', // 使用github的 gh-pages服务 /docs/需要配置此项
 
     /**
      * Source Maps

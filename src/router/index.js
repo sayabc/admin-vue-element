@@ -12,8 +12,8 @@ Vue.use(Router);
 export const defaultSideBar = dashBoard;
 
 export const routersMap = [
-  welcome,
   dashBoard,
+  welcome,
   errPage,
   components,
 ];
