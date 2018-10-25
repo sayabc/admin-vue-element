@@ -1,0 +1,2 @@
+webpackJsonp([1],{xDZL:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var s={render:function(){var e=this.$createElement;return(this._self._c||e)("div",{staticClass:"test2"},[this._v("\n  这里是 50x 页面\n")])},staticRenderFns:[]},l=n("VU/8")(null,s,!1,null,null,null);t.default=l.exports}});
+//# sourceMappingURL=1.c034cb84f17c25f799f9.js.map
