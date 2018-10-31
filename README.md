@@ -54,6 +54,7 @@
 ~~切换tab时候sidebar切换，对应的sidebar第一页应该高亮显示出来~~
 - [ ] 当 __dev__ 合并到 __master__ 的时候触发一个能够在 __master__ 分支运行 __npm run build__ 生成 __public__ 的脚本，方便预览(需配置域名)
 - [ ] 添加 .circleci 并使用
+- [ ] 网站预览页面 __https://sayabc.github.io/admin-vue-element/#/dashBoard__的网站图标
 是否考虑下移动端的简单适配?
 是否考虑页面显示更方便可控(新增页面一行命令解决)?
 
